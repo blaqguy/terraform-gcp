@@ -28,9 +28,9 @@ resource "google_compute_instance_template" "gcp-assessment" {
     network            = google_compute_network.main.name
     subnetwork         = "us-east"
     subnetwork_project = var.project_id
-     //access_config {
+     access_config {
       // Ephemeral public IP | this issues public ip
-     //}    
+     }    
   }
   service_account {
     // Google recommends custom service accounts that have cloud-platform scope and permissions granted via IAM Roles.
