@@ -3,7 +3,7 @@ resource "google_compute_instance_template" "gcp-assessment" {
   name        = "${var.project_name}-template"
   project     = var.project_id
   tags = [
-    "gcp-assessment-webserver", "allow-http"
+    "gcp-assessment-webserver", "allow-http", "bastion-ssh"
   ]
   region               = var.region
   instance_description = "gcp-assessment instance(s)"
