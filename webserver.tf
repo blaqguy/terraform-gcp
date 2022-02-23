@@ -28,9 +28,9 @@ resource "google_compute_instance_template" "gcp-assessment" {
     network            = google_compute_network.main.name
     subnetwork         = "us-east"
     subnetwork_project = var.project_id
-     access_config {
-      // Ephemeral public IP | this issues public ip
-     }    
+     #access_config {
+      # Ephemeral public IP | this issues public ip
+     #}    
   }
   service_account {
     // Google recommends custom service accounts that have cloud-platform scope and permissions granted via IAM Roles.
@@ -41,7 +41,7 @@ resource "google_compute_instance_template" "gcp-assessment" {
   metadata_startup_script = file("${path.module}/startup.sh")
 
   depends_on = [
-    google_compute_subnetwork.subnetwork
+    google_compute_subnetwork.subnetwork, google_compute_router_nat.nat
   ]
 }
 
