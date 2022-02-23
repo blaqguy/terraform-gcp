@@ -47,6 +47,22 @@ variable "custom_rules" {
     extra_attributes = map(string)
   }))
   default = {
+    bastion-ssh = {
+      description          = "Bastion ssh access"
+      direction            = "INGRESS"
+      action               = "allow"
+      ranges               = ["0.0.0.0/0"]
+      sources              = null
+      targets              = ["bastion-ssh"]
+      use_service_accounts = false
+      rules = [
+        {
+          protocol = "tcp"
+          ports    = ["22"]
+        }
+      ]
+      extra_attributes = {}
+    },    
     allow-http = {
       description          = "Allows http connections"
       direction            = "INGRESS"
