@@ -9,7 +9,7 @@ PROJECT_NAME="assessment"$RANDOM
 PROJECT_APIS=("cloudresourcemanager.googleapis.com" "compute.googleapis.com" "servicenetworking.googleapis.com" "iam.googleapis.com")
 SERVICE_ACCOUNT_NAME="terraform"
 SERVICE_ACCOUNT_ROLE="roles/owner"
-BILLING_ACCOUNT_ID=<>"
+BILLING_ACCOUNT_ID="<>"
 
 # This block deploys our GCP resources
 # Create a Project
