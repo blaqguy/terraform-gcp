@@ -20,8 +20,9 @@
 ```bash
 git clone https://github.com/blaqguy/terraform-gcp.git
 ```
-- Change directory into our local repo
-- Download Service Account Key from GCP console and place in this directory
+- Change directory into our local repo and once more into the bootstrap directory
+- Edit the variables in the script to the right values then run the script. It'll create several resources: A Project, Enable the API(s) we need to call in the project, create a Service Account within the project for Terraform and lastly download the Service Account API key
+> If you created the required resources manually, just download your Service Account Key from GCP console and place in your local repo directory
 - Edit the providers.tf file and update the values for the credentials parameter
 - Update our variable values, I recommend creating a .tfvars file but you're free to update the default values directly in the variables.tf file
 - Initialize the Directory
